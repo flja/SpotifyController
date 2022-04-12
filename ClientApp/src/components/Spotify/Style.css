@@ -1,0 +1,59 @@
+﻿.content .container .track {
+    background-color: #2f2c2c;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.content .container .track p{
+    margin-top: 20px;
+    color: white;
+}
+
+.content .container .track #name{
+    margin-left: 20px;
+    width: 35%;
+}
+
+.content .container .track #album{
+    width: 17.5%;
+}
+
+.content .container .track #artist{
+    width: 17.5%;
+}
+
+.content .container .track #duration{
+    width: 7.5%;
+}
+
+.content .container .track Button{
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 50%;
+    width: auto;
+}
+
+.content .container .playlistLink {
+    background-color: #2f2c2c;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.content .container .playlistLink p{
+    margin-top: 20px;
+    color: white;
+}
+
+.content .container .playlistLink #name{
+    margin-left: 20px;
+    width: 35%;
+}
+
+.content .container .playlistLink image{
+    max-height: 20%;
+}
