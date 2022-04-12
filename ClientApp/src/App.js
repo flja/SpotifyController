@@ -12,7 +12,7 @@ import Track from './components/Spotify/Track';
 import Playlist from './components/Spotify/Playlist';
 import PlaylistLink from './components/Spotify/PlaylistLink';
 import PlaylistOverview from './components/Spotify/PlaylistOverview';
-import Search from './components/Spotify/Track';
+import Search from './components/Spotify/Search';
 
 export default () => ( 
     <Layout Title="Spotify">

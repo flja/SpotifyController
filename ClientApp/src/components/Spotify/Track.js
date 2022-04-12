@@ -4,7 +4,7 @@ import '../Template.css';
 import './Style.css';
 
 
-export default class Search extends React.Component {
+export default class Track extends React.Component {
 
     constructor(props) {
         super(props);
