@@ -173,14 +173,20 @@ namespace SpotifyController.Services
             return (response.Item1, response.Item2);
         }
 
-        //public async Task<(bool, List<Playlist>, string)> GetCurrentUsersPlaylists(User user)
-        //public async Task<(bool, List<Playlist>, string)> GetCurrentUsersPlaylists(User user)
-        public async Task<(bool, ListOfPlaylists, string)> GetCurrentUsersPlaylists(User user)
+        public async Task<(bool, Search, string)> Search(User user, string query)
+        {
+            string url = "/search?q=track:" + query + "&type=album,artist,playlist,track,show,episode&market=dk";
+
+            var response = await SendAPIRequest<Search>(user, "GET", url);
+            return response;
+        }
+
+        public async Task<(bool, Playlists, string)> GetCurrentUsersPlaylists(User user)
         {
             string url = "/me/playlists";
 
             //var response = await SendAPIRequest<List<Playlist>>(user, "GET", url);
-            var response = await SendAPIRequest<ListOfPlaylists>(user, "GET", url);
+            var response = await SendAPIRequest<Playlists>(user, "GET", url);
             return response;
         }
         

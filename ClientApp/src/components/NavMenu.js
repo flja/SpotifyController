@@ -21,6 +21,7 @@ export default class NavMenu extends React.PureComponent {
                     <nav>
                         <ul>
                             <a href="/Playlists"><li>Playlists</li></a>
+                            <a href="/Search"><li>Search</li></a>
                         </ul>
                     </nav>
                 </header>

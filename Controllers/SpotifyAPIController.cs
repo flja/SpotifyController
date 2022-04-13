@@ -77,7 +77,7 @@ namespace LogenV2React.Controllers
             User user = UserRepo.TestUser;
             
             bool succesfullyAdded;
-            ListOfPlaylists playlists;
+            Playlists playlists;
             string responseContent;
 
             try
@@ -91,7 +91,7 @@ namespace LogenV2React.Controllers
             }
 
             if (!succesfullyAdded)
-                return NotFound("Playlist could not be added found!");
+                return NotFound("Playlists could not be found!");
 
             return Ok(playlists);
             //return Ok(responseContent);
@@ -119,9 +119,36 @@ namespace LogenV2React.Controllers
             }
 
             if (!succesfullyAdded)
-                return NotFound("Playlist could not be added found!");
+                return NotFound("Playlist could not be found!");
 
             return Ok(playlist);
+        }
+
+        public async Task<IActionResult> Search([FromQuery] string query)
+        {
+            if (query == null)
+                return NotFound("No search query found");
+
+            User user = UserRepo.TestUser;
+
+            bool succesfullyAdded;
+            Search searchResult;
+            string responseContent;
+
+            try
+            {
+                (succesfullyAdded, searchResult, responseContent) = await _spotifyAPIService.Search(user, query);
+            }
+            catch (SpotifyNotConnectedException)
+            {
+                return Unauthorized(new { Message = "Not Connected to spotify!" });
+            }
+
+            if (!succesfullyAdded)
+                return NotFound("Search failed!");
+
+            return Ok(searchResult);
+            return Ok(responseContent);
         }
 
     }
